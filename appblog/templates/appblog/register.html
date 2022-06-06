@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+{% load crispy_forms_tags %}
+
+
+
+<form action="" method="post" enctype="multipart/form-data" class='container-fluid w-75'>
+    <h3>Join Today</h3>
+    {% csrf_token %} 
+    
+    {{ form_user | crispy }}
+    
+
+    <button type="submit" class="btn btn-success">Sign In</button>
+    <hr>
+     Already have an account?<a class='text-decoration-none' href={% url 'list'%}> Sign In </a>
+</form>
+{% endblock content %}
